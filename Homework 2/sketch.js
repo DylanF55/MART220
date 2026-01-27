@@ -1,7 +1,8 @@
 function setup() {
-   createCanvas(3000,500);
+   createCanvas(800, 600);
 }
 function draw() {
-CSSNumericValue(150,150,50)
-    background(210);
+    square(250,250,50);
+    background(250);
+    
 }
