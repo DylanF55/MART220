@@ -1,7 +1,7 @@
 var x =300;
-var y =;
-var xx =;
-var yy =;
+var y =500;
+var xx =10;
+var yy =200;
 
 
 function setup()
@@ -10,6 +10,10 @@ function setup()
             }
             function draw(){
                 background(0);
+                function keyPressed(){
+            if(keyPressed){
+                x -= 205; }
+            }
                 fill(0,100,255);
                     //eyes//
                 circle(150,150,50);
@@ -25,7 +29,7 @@ function setup()
                 ellipse(600, 50, 80, 400);
                 ellipse(50, 50, 80, 400);
                 fill(0,100,255);
-                ellipse(300, 500, 10, 200);
+                ellipse(x, y, xx, yy);
                 
 
                  fill(227, 42, 14);
@@ -38,4 +42,12 @@ function setup()
                 text("Dylan Fullerton",450,800)
             }
 
-            function keyPressed(){}
+            function keyPressed(){
+            if (keycode == 32){
+                x -= 25; }
+            }
+
+
+
+            
+        
