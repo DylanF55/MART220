@@ -1,15 +1,23 @@
-var x =300;
-var y =500;
-var xx =10;
-var yy =200;
 
+let beefstrag;
+let beefstragO;
+let xmpl1;
 
+function preload() {
+beefstrag = loadImage('../assets/images/beefstrag.jpg');
+beefstragO = loadImage('../assets/images/beefstragO.jpg');
+xmpl1 = loadImage('../../assets/images/xmpl1.jpeg');
+}
 function setup()
             {
                 createCanvas(900,900);
             }
             function draw(){
                 background(0);
+                image(beefstrag, 0, 0 ,width/2, height);
+                image(beefstragO, 0, 0 ,width/2, height);
+                image(xmpl1, 0, 0 ,width/2, height);
+
                 function keyPressed(){
             if(keyPressed){
                 x -= 205; }
@@ -40,11 +48,6 @@ function setup()
                 textFont('Courier New');
                  textSize(40);
                 text("Dylan Fullerton",450,800)
-            }
-
-            function keyPressed(){
-            if (keycode == 32){
-                x -= 25; }
             }
 
 
