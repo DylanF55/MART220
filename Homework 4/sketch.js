@@ -43,7 +43,7 @@ function setup()
                  fill(227, 42, 14);
                 textFont('Courier New');
                  textSize(40);
-                text("Buzzards",40,100)
+                text("Stragonoff Forever",40,100)
                  fill(227, 42, 14);
                 textFont('Courier New');
                  textSize(40);
