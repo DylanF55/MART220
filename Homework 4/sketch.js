@@ -4,9 +4,9 @@ let beefstragO;
 let xmpl1;
 
 function preload() {
-beefstrag = loadImage('../assets/images/beefstrag.jpg');
-beefstragO = loadImage('../assets/images/beefstragO.jpg');
-xmpl1 = loadImage('../../assets/images/xmpl1.jpeg');
+beefstrag = loadImage('assets/images/beefstrag.jpg');
+beefstragO = loadImage('assets/images/beefstragO.jpg');
+xmpl1 = loadImage('assets/images/xmpl1.jpeg');
 }
 function setup()
             {
