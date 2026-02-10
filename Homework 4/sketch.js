@@ -24,8 +24,8 @@ function setup()
             }
                 fill(0,100,255);
                     //eyes//
-                circle(150,150,50);
-                circle(150,210,50);
+                circle(190,150,50);
+                circle(190,210,50);
                 circle(150,380,50);
                 circle(450,150,50);
                 circle(450,210,50);
