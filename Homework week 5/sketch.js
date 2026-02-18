@@ -5,6 +5,15 @@ let r = [];
 let g = [];
 let b = [];
 
+let imgs = [];
+let imgCount = 5; 
+
+function preload() {
+  for (let i = 0; i < imgCount; i++) {
+    imgs[i] = loadImage('images/food' + i + '.png');
+  }
+}
+
 function setup() {
   createCanvas(800, 600);
 
