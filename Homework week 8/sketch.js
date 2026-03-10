@@ -42,7 +42,7 @@ function draw() {
     textAlign(LEFT, TOP);
     text(nf(secs, 2), 10, 10);
     text('Scoreboard: ' + score, 10, 50);
-
+        
     if (!audioStarted) {
         textSize(25);
         text('click to begin', 400, 400);
@@ -53,7 +53,7 @@ function draw() {
     if (keyIsDown(RIGHT_ARROW)) imgX += 5;
     if (keyIsDown(UP_ARROW)) imgY -= 5;
     if (keyIsDown(DOWN_ARROW)) imgY += 5;
-        //Scoring//
+        //Scoring for proximity to food//
     let playerCenterX = imgX + 90;
     let playerCenterY = imgY + 150;
     let foodCenterX = imgX2 + 100;
