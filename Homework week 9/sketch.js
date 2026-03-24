@@ -124,7 +124,7 @@ function draw() {
     fill(255, 0, 0);
     textSize(80);
     textAlign(200, 200);
-    text('You Win : >', width / 2, height / 2);
+    text('You Win : >', 2, 2);
 }
 
 
