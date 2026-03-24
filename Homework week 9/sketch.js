@@ -8,6 +8,11 @@ let score = 0;
 let isNearFood = false;
 let song;
 let audioStarted = false;
+let playerCollider;
+let blockBox;
+
+const PLAYER_W = 400;
+const PLAYER_H = 300;
 
 // timer//
 let startTime;
@@ -24,6 +29,14 @@ function setup() {
     createCanvas(1500, 1000);
     startTime = millis();
     song.setVolume(0.1);
+
+    // Invisible sprite that follows move1.png and handles collision physics.
+    playerCollider = createSprite(imgX + PLAYER_W / 2, imgY + PLAYER_H / 2, 140, 110);
+    playerCollider.visible = false;
+
+    // Visible p5.play box obstacle.
+    blockBox = createSprite(700, 420, 220, 220);
+    blockBox.shapeColor = color(220, 70, 70);
 }
 
 function draw() {
@@ -48,11 +61,20 @@ function draw() {
         text('click to begin', 400, 400);
     }
 
-    // Controls//
-    if (keyIsDown(LEFT_ARROW)) imgX -= 5;
-    if (keyIsDown(RIGHT_ARROW)) imgX += 5;
-    if (keyIsDown(UP_ARROW)) imgY -= 5;
-    if (keyIsDown(DOWN_ARROW)) imgY += 5;
+    // Controls with collision against the p5.play box.
+    let nextX = imgX;
+    let nextY = imgY;
+    if (keyIsDown(LEFT_ARROW)) nextX -= 5;
+    if (keyIsDown(RIGHT_ARROW)) nextX += 5;
+    if (keyIsDown(UP_ARROW)) nextY -= 5;
+    if (keyIsDown(DOWN_ARROW)) nextY += 5;
+
+    playerCollider.position.x = nextX + PLAYER_W / 2;
+    playerCollider.position.y = nextY + PLAYER_H / 2;
+    playerCollider.collide(blockBox);
+
+    imgX = playerCollider.position.x - PLAYER_W / 2;
+    imgY = playerCollider.position.y - PLAYER_H / 2;
         //Scoring for proximity to food//
     let playerCenterX = imgX + 90;
     let playerCenterY = imgY + 150;
@@ -73,6 +95,7 @@ function draw() {
     
     if (img) image(img, imgX, imgY, 400, 300);
     if (img2) image(img2, imgX2, imgY2, 200, 150);
+    drawSprites();
 }
 
 function mousePressed() {
