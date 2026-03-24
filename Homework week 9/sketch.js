@@ -116,6 +116,17 @@ function draw() {
     } else {
         isNearFood = false;
     }
+    if (audioStarted && score >= 10 && song.isPlaying()) {
+    song.stop();
+    }
+
+    if (score >= 10) {
+    fill(255, 0, 0);
+    textSize(80);
+    textAlign(200, 200);
+    text('You Win : >', width / 2, height / 2);
+}
+
 
     if (sphereVisible && circleRectOverlap(SphereX, SphereY, SphereRadius, imgX, imgY, playerW, playerH)) {
         score = max(0, score - 1);
